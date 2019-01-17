@@ -46,7 +46,10 @@ $twig = new Twig_Environment($loader);
  * [3]	Render with Twig
  */
 
-echo $twig->render('index.html');
+$articles_json = file_get_contents('https://gist.githubusercontent.com/dave1010/2406d86cea97da020ef1bb9f13eb8eec/raw/f4d32185f91e830f8ee41d137056ccd1e373fa90/news.json');
+$articles = json_decode($articles_json, true);
+
+echo $twig->render('index.html', ['articles' => $articles]);
 
 
 ?>
