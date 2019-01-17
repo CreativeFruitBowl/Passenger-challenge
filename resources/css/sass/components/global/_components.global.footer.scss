@@ -1,0 +1,38 @@
+/**
+ * [Component] Fake header
+ * 
+ * @package  	challenge
+ * @category	settings
+ * @version  	1.0.0
+ * @since   	1.0.0
+ * @author  	Andi North <andi@mangopear.co.uk>
+ * @license   	GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+ */
+
+
+/**
+ * CHANGELOG
+ *
+ * @version 1.0.0
+ *          Init file
+ */
+
+
+/**
+ * CONTENTS
+ *
+ * [1]	Wrapper
+ */
+
+
+/**
+ * [1]	Wrapper
+ *
+ * 		This is a fake footer to vaguely represent the BBC News footer.
+ */
+
+.c-fake-footer {
+	background: #4c4c4c;
+	@include rempx(height, 210px);
+	@include rempx(margin-top, 12px);
+}

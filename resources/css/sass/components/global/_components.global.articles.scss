@@ -1,0 +1,219 @@
+/**
+ * [Component] Article
+ * 
+ * @package  	challenge
+ * @category	settings
+ * @version  	1.0.0
+ * @since   	1.0.0
+ * @author  	Andi North <andi@mangopear.co.uk>
+ * @license   	GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+ */
+
+
+/**
+ * CHANGELOG
+ *
+ * @version 1.0.0
+ *          Init file
+ */
+
+
+/**
+ * CONTENTS
+ *
+ * [1]	Articles wrapper
+ * [2]	Article > Wrapper
+ * [3]	Article > Media
+ * [4]	Article > Content
+ * [5]	Article variant: Lead article
+ */
+
+
+/**
+ * [1]	Articles wrapper
+ */
+
+.o-articles {
+	@include rempx(padding, 12px);
+}
+
+
+	.o-articles__header {
+		position: relative;
+
+
+		&::before {
+			width: 100%;
+			content: '';
+			position: absolute;
+			border-top: 1px solid #CCC;
+			@include rempx(top, 19px);
+		}
+	}
+
+
+		.o-articles__title {
+			background: #FFF;
+			position: relative;
+			display: inline-block;
+			@include rempx(font-size, 24px);
+			@include rempx(margin, 0 0 20px);
+			@include rempx(padding-right, 24px);
+		}
+
+
+	.o-articles__grid {
+		display: flex;
+		flex-wrap: wrap;
+
+
+		> .o-grid__item {
+			display: flex;
+		}
+	}
+
+
+
+
+
+/**
+ * [2]	Article > Wrapper
+ */
+
+.o-article {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	@include rempx(margin-bottom, 22px);
+}
+
+
+
+
+
+	/**
+	 * [3]	Article > Media
+	 */
+
+	.o-article__media {
+		@include rempx(margin-bottom, 12px);
+	}
+
+
+		.o-article__asset {
+			background: center center;
+			background-size: cover;
+		}
+
+
+			.o-article__asset::before {
+				content: '';
+				display: block;
+				padding-bottom: 50%;
+			}
+
+
+
+
+
+	/**
+	 * [4]	Article > Content
+	 */
+
+	.o-article__main {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+		.o-article__inner-body {
+			flex-grow: 1;
+		}
+
+			.o-article__title {
+				line-height: 1.3;
+				@include rempx(font-size, 16px);
+				@include rempx(margin, 0 0 10px);
+			}
+
+
+				.o-article__title__link {
+					outline: 0;
+					@include mangui-transition(ease-in-out 400ms all);
+
+
+					&::before {
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						content: '';
+						position: absolute;
+						outline: 2px solid transparent;
+						outline-offset: 2px;
+						@include mangui-transition(ease-in-out 400ms all);
+					}
+
+
+					&:focus::before {
+						outline-color: $lime;
+					}
+				}
+
+				
+
+			.o-article__content {
+				@include rempx(font-size, 14px);
+			}
+
+
+			.o-article__footer {
+
+			}
+
+
+				.o-article__date {
+					color: #888;
+					@include rempx(font-size, 13px);
+					@include rempx(margin-top, 10px);
+				}
+
+				.o-article__date__icon {
+					display: inline-block;
+					vertical-align: middle;
+					@include rempx(margin-right, 3px);
+				}
+
+
+
+
+
+/**
+ * [5]	Article variant: Lead article
+ */
+
+@include mangui-breakpoint(desk) {
+	.o-article--lead {
+		flex-direction: row;
+
+
+		.o-article__media {
+			width: 66%;
+		}
+
+
+		.o-article__main {
+			width: 33%;
+			@include rempx(padding-left, 12px);
+		}
+
+			.o-article__title {
+				margin-top: 0;
+				@include rempx(font-size, 20px);
+			}
+
+			.o-article__content {
+				@include rempx(font-size, 15px);
+			}
+	}
+}
